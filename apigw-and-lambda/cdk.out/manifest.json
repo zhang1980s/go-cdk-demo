@@ -1,0 +1,142 @@
+{
+  "version": "29.0.0",
+  "artifacts": {
+    "DemoStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "DemoStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "DemoStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://894855526703/ap-southeast-1",
+      "properties": {
+        "templateFile": "DemoStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::894855526703:role/cdk-hnb659fds-deploy-role-894855526703-ap-southeast-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::894855526703:role/cdk-hnb659fds-cfn-exec-role-894855526703-ap-southeast-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-894855526703-ap-southeast-1/767ccfc7e77a912736d878b63c1913960082b3504e5beffd3c4f8af3664743dc.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "DemoStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::894855526703:role/cdk-hnb659fds-lookup-role-894855526703-ap-southeast-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "DemoStack.assets"
+      ],
+      "metadata": {
+        "/DemoStack/DemoFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DemoFunctionServiceRoleD5AC30C0"
+          }
+        ],
+        "/DemoStack/DemoFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DemoFunctionF0F3B7EA"
+          }
+        ],
+        "/DemoStack/endpoint/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointE7B9679B"
+          }
+        ],
+        "/DemoStack/endpoint/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointDeployment457D977D53df278862b8db2b3cbc7f4a5e711e3c"
+          }
+        ],
+        "/DemoStack/endpoint/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointDeploymentStageprod2CD5F9C4"
+          }
+        ],
+        "/DemoStack/endpoint/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointEndpoint5E1E9134"
+          }
+        ],
+        "/DemoStack/endpoint/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointproxy3148D98A"
+          }
+        ],
+        "/DemoStack/endpoint/Default/{proxy+}/ANY/ApiPermission.DemoStackendpoint52EC29F6.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointproxyANYApiPermissionDemoStackendpoint52EC29F6ANYproxy2C25F54E"
+          }
+        ],
+        "/DemoStack/endpoint/Default/{proxy+}/ANY/ApiPermission.Test.DemoStackendpoint52EC29F6.ANY..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointproxyANYApiPermissionTestDemoStackendpoint52EC29F6ANYproxy8341AE3A"
+          }
+        ],
+        "/DemoStack/endpoint/Default/{proxy+}/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointproxyANY6E13FB92"
+          }
+        ],
+        "/DemoStack/endpoint/Default/ANY/ApiPermission.DemoStackendpoint52EC29F6.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointANYApiPermissionDemoStackendpoint52EC29F6ANY3DA0E2BF"
+          }
+        ],
+        "/DemoStack/endpoint/Default/ANY/ApiPermission.Test.DemoStackendpoint52EC29F6.ANY..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointANYApiPermissionTestDemoStackendpoint52EC29F6ANY4E9D0C1A"
+          }
+        ],
+        "/DemoStack/endpoint/Default/ANY/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "endpointANY514C2A81"
+          }
+        ],
+        "/DemoStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/DemoStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/DemoStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "DemoStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
